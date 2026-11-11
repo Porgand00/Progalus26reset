@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a7bce9e1-420a-4ab3-ab19-266973d9366a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Progalus26reset.py</StartupFile>
+    <StartupFile>problema.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Progalus26reset.py" />
+    <Compile Include="Konn.py" />
+    <Compile Include="Essa.py" />
+    <Compile Include="tunnitoo.py" />
+    <Compile Include="problema.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

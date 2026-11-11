@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>a7bce9e1-420a-4ab3-ab19-266973d9366a</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>problema.py</StartupFile>
+    <StartupFile>1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,6 +21,8 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="1.py" />
+    <Compile Include="UUS.py" />
     <Compile Include="Konn.py" />
     <Compile Include="Essa.py" />
     <Compile Include="tunnitoo.py" />

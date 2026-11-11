@@ -78,8 +78,51 @@ else:
 print(f"Lõplik hind on: {hind:.2f} eurot")
 #5. Temperatuur
 try:
-    temperatuur=float(input ("Sisesta toatemperatuur kraadides: "))
-    if tmeperatuur > 18:
-        print("Toatemperatuur on 18 kraddid või madalam")
+    temperatuur = float(input("Sisesta temperatuur: "))
+    if temperatuur <= 18:
+        print("Toatemperatuur on 18 kraadi või madalam")
+    else:
+        print("Toatemperatuur on üle 18 kraadi")
 except ValueError:
- print("Palun sisesta temperatuur numbrina")
+    print("Palun sisesta temperatuur numbrina")
+
+print()
+
+# --- Ülesanne 6: Laulusõnad suurte tähtedega ---
+print("--- Ülesanne 6 ---")
+laulusonad = "Rong see sõitis tsuhh tsuhh tsuhh, piilupart oli rongijuht. Rattad tegid rat tat taa, rat tat taa ja tat tat taa. Aga seal rongi peal, kas sa tead, kes olid seal? Rong see sõitis tuut tuut tuut, piilupart oli rongijuht. Rattad tegid kill koll koll, kill koll koll ja kill koll kill."
+print(laulusonad.upper())
+print()
+
+# --- Ülesanne 7: Ristküliku ümbermõõt ja pindala ---
+print("--- Ülesanne 7 ---")
+a = float(input("Sisesta ristküliku esimese külje pikkus: "))
+b = float(input("Sisesta ristküliku teise külje pikkus: "))
+umbermoot = 2 * (a + b)
+pindala = a * b
+print(f"Ristküliku ümbermõõt on {umbermoot} ja pindala on {pindala}.")
+print()
+
+# --- Ülesanne 8: Kütusekulu arvutamine ---
+print("--- Ülesanne 8 ---")
+liitrid = float(input("Sisesta tangitud kütuse liitrid: "))
+kilomeetrid = float(input("Sisesta läbitud kilomeetrid: "))
+kutusekulu = (liitrid / kilomeetrid) * 100
+print(f"Keskmine kütusekulu on {round(kutusekulu, 2)} liitrit 100 km kohta.")
+print()
+
+# --- Ülesanne 9: Rulluisutajad ---
+print("--- Ülesanne 9 ---")
+minutid = float(input("Sisesta aeg minutites (M): "))
+kiirus = 29.9
+tunnid = minutid / 60
+teepikkus = kiirus * tunnid
+print(f"Rulluisutaja jõuab {minutid} minutiga {round(teepikkus, 2)} km kaugusele.")
+print()
+
+# --- Ülesanne 10: Ajateisendus ---
+print("--- Ülesanne 10 ---")
+kogu_minutid = int(input("Sisesta aeg minutites: "))
+tunnid_vastus = kogu_minutid // 60
+minutid_vastus = kogu_minutid % 60
+print(f"Aeg on {tunnid_vastus}:{minutid_vastus:02d}")

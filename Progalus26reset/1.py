@@ -88,41 +88,102 @@ except ValueError:
 
 print()
 
-# --- Ülesanne 6: Laulusõnad suurte tähtedega ---
-print("--- Ülesanne 6 ---")
-laulusonad = "Rong see sõitis tsuhh tsuhh tsuhh, piilupart oli rongijuht. Rattad tegid rat tat taa, rat tat taa ja tat tat taa. Aga seal rongi peal, kas sa tead, kes olid seal? Rong see sõitis tuut tuut tuut, piilupart oli rongijuht. Rattad tegid kill koll koll, kill koll koll ja kill koll kill."
-print(laulusonad.upper())
-print()
+#Pikkus
 
-# --- Ülesanne 7: Ristküliku ümbermõõt ja pindala ---
-print("--- Ülesanne 7 ---")
-a = float(input("Sisesta ristküliku esimese külje pikkus: "))
-b = float(input("Sisesta ristküliku teise külje pikkus: "))
-umbermoot = 2 * (a + b)
-pindala = a * b
-print(f"Ristküliku ümbermõõt on {umbermoot} ja pindala on {pindala}.")
-print()
+try:
+    pikkus = float(input("Sisesta inimese pikkus sentimeetrites: "))
+    if 30<=pikkus < 160:
+        print("Inimene on lühike.")
+    elif 160 <= pikkus <= 180:
+        print("Inimene on keskmise pikkusega")
+    elif 180<pikkus<=220:
+        print("Inimene on pikk.")
+    else:
+        print("Arv ei sobi")
+except ValueError:
+    print("Viga: Pakun sisesta pikkus numbrina.")
 
-# --- Ülesanne 8: Kütusekulu arvutamine ---
-print("--- Ülesanne 8 ---")
-liitrid = float(input("Sisesta tangitud kütuse liitrid: "))
-kilomeetrid = float(input("Sisesta läbitud kilomeetrid: "))
-kutusekulu = (liitrid / kilomeetrid) * 100
-print(f"Keskmine kütusekulu on {round(kutusekulu, 2)} liitrit 100 km kohta.")
-print()
+    #Ülesanne 7 pikkus ja sugu
 
-# --- Ülesanne 9: Rulluisutajad ---
-print("--- Ülesanne 9 ---")
-minutid = float(input("Sisesta aeg minutites (M): "))
-kiirus = 29.9
-tunnid = minutid / 60
-teepikkus = kiirus * tunnid
-print(f"Rulluisutaja jõuab {minutid} minutiga {round(teepikkus, 2)} km kaugusele.")
-print()
 
-# --- Ülesanne 10: Ajateisendus ---
-print("--- Ülesanne 10 ---")
-kogu_minutid = int(input("Sisesta aeg minutites: "))
-tunnid_vastus = kogu_minutid // 60
-minutid_vastus = kogu_minutid % 60
-print(f"Aeg on {tunnid_vastus}:{minutid_vastus:02d}")
+    sugu = input("Sugu: ")
+    if sugu.isapha():
+       if sugu.lower() == "m" or sugu.upper() == "MEES":
+        if 30 <= pikkus < 170:
+            print("Mees on lühike.")
+        elif 170 <= pikkus <= 185:
+            print("Mees on keskmise pikkusega.")
+        elif 185 < pikkus <= 220:
+            print("Mees on pikk.")
+        else:
+            print("Arv ei sobi")
+
+    elif sugu.lower() == "n" or sugu.upper() == "NAINE":
+        if 30 <= pikkus < 160:
+            print("Naine on lühike.")
+        elif 160 <= pikkus <= 175:
+            print("Naine on keskmise pikkusega.")
+        elif 175 < pikkus <= 220:
+            print("Naine on pikk.")
+        else:
+            print("Arv ei sobi")
+
+    else:
+        print("Viga: Kirjuta tähtedega.")
+
+#         8. Poes
+
+# Küsi kasutajalt iga toote kohta eraldi, kas ta soovib seda osta: piim, sai, leib ja vähemalt kaks toodet veel.
+
+#     Toodete hinnad loo juhuslikult moodulist random, näiteks round(random.uniform(0.5, 3), 2).
+#     Kui kasutaja soovib toodet osta, küsi kogus. Kontrolli, et kogus on täisarv (isdigit()).
+#     Lõpus kuva tšekk: iga ostetud toote nimi, kogus, hind ja summa ning kõige all kogusumma.
+from random import *
+summa=0
+arve="toode    Kogus    Hind    kokku/n"
+valik=input("Kas soovid osta piima? (jah/ei)")
+if valik.lower()=="Jah":
+    kogus=input("Mitu piima soovid osta (int)  ")
+    if kogus.isdigit():
+        kogus=int(kogus)
+        p_hind=round(uniform(0.5,3.6),2)
+        print (f"Piima hind on {p_hind}")
+        summa+=(kogus*p_hind,2)
+        print (f"Piima kogusumm on {summa}")
+        arve+=f"piim    {kogus}    {p_hind}    {round(uniform(0.5,3.6),2)}/n"
+    else:
+        print("Viga: Vale number")
+else:
+    print("Selge: piima ei taha")
+arve="toode    Kogus    Hind    kokku/n"
+valik=input("Kas soovid osta Leiba? (jah/ei)")
+if valik.lower()=="Jah":
+    kogus=input("Mitu Leiba soovid osta (int)  ")
+    if kogus.isdigit():
+        kogus=int(kogus)
+        p_hind=round(uniform(0.5,3.6),2)
+        print (f"Leiva hind on {p_hind}")
+        summa+=(kogus*p_hind,2)
+        print (f"Leiva kogusumm on {summa}")
+        arve+=f"Leib    {kogus}    {p_hind}    {round(uniform(0.5,3.6),2)}/n"
+    else:
+        print("Viga: Vale number")
+else:
+    print("Selge: Leiba ei taha")
+arve="toode    Kogus    Hind    kokku/n"
+valik=input("Kas soovid osta Vett? (jah/ei)")
+if valik.lower()=="Jah":
+    kogus=input("Mitu Vett soovid osta (int)  ")
+    if kogus.isdigit():
+        kogus=int(kogus)
+        p_hind=round(uniform(0.5,3.6),2)
+        print (f"Vee hind on {p_hind}")
+        summa+=(kogus*p_hind,2)
+        print (f"Vee kogusumm on {summa}")
+        arve+=f"Vee    {kogus}    {p_hind}    {round(uniform(0.5,3.6),2)}/n"
+    else:
+        print("Viga: Vale number")
+else:
+    print("Selge: Vett ei taha")
+print ("Arver Nr. 1203948576")
+print (arve)

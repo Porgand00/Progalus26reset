@@ -134,7 +134,6 @@ except ValueError:
 #         8. Poes
 
 # Küsi kasutajalt iga toote kohta eraldi, kas ta soovib seda osta: piim, sai, leib ja vähemalt kaks toodet veel.
-
 #     Toodete hinnad loo juhuslikult moodulist random, näiteks round(random.uniform(0.5, 3), 2).
 #     Kui kasutaja soovib toodet osta, küsi kogus. Kontrolli, et kogus on täisarv (isdigit()).
 #     Lõpus kuva tšekk: iga ostetud toote nimi, kogus, hind ja summa ning kõige all kogusumma.
@@ -187,3 +186,44 @@ else:
     print("Selge: Vett ei taha")
 print ("Arver Nr. 1203948576")
 print (arve)
+
+# 9. Ruut
+# Kasutaja sisestab nelinurga nelja külje pikkused.
+# Programm teatab, kas tegemist saab olla ruuduga (kõik küljed on võrdsed).
+# Kontrolli ka, et kõik pikkused on positiivsed.
+# Koosta programmi kohta plokkskeem ja salvesta see PNG-pildina programmiga samasse kausta.
+
+try:
+    a = float(input("1. külg: "))
+    b = float(input("2. külg: "))
+    c = float(input("3. külg: "))
+    d = float(input("4. külg: "))
+    if a > 0 and b > 0 and c > 0 and d > 0:
+        if a == b == c == d:
+            print("Ruudu küljed")
+        else:
+            print("Nelinurga küljed.")
+    else:
+        print("Viga:küljed peavad olema > 0")
+except ValueError:
+    print("Viga: On vaja ujukomaarv")
+
+# 10. Matemaatika
+# Kasutaja sisestab kaks arvu.
+# Seejärel küsib programm, millist tehet ta soovib (+, -, *, /), ja kuvab tulemuse.
+# Kui sisestatakse tundmatu tehtemärk, kuva veateade.
+# Nulliga jagamise korral kuva arusaadav teade, mitte veateade Pythonist.
+# Koosta programmi kohta plokkskeem ja salvesta see PNG-pildina programmiga samasse kausta.
+
+tehted=["+","-","*","/"]
+try:
+    arv1=float(input("Sisesta 1. arv:"))
+    arv2=float(input("Sisesta 2. arv:"))
+    tehe=input("Sisesta tehe:")
+    if tehe in tehed:
+        if tehe=="+":
+            print(f"{arv1}{tehe}{arv2}={arv1/arv2}")
+    else:
+        print("Viga: tundamtu tehtemärk")
+except ValueError:
+    print("Viga: sisesta arvud")

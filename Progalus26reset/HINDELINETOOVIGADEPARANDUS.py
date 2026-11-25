@@ -1,3 +1,4 @@
+
 valik=input("Millise programmi valid (1/2/3) ")
 if valik.lower()=="1":
     print("aastaeg") #Parandasin juttumärgid
